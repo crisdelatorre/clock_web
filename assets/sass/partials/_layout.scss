@@ -1,0 +1,35 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    .sky{
+        grid-area: 1 / 1 / span 1 / span 1;
+        height: 100%;
+        display: flex;
+        
+        justify-content: center;
+        align-items: flex-end;
+
+        .clock{
+            .working_clock{} 
+            .cycle_path{}
+            .sun{}
+            .moon{}
+         }
+
+        overflow: hidden;
+    }
+    .ground{
+        grid-area: 2 / 1 / span 1 / span 1;
+        height: 100%;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        .countdown{}
+
+        overflow: hidden;
+
+    }
+}

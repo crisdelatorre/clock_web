@@ -1,0 +1,171 @@
+.sky {
+    width: 100%;
+
+    &.sunrise{
+        background-color: #e1edff;
+    }
+    &.noon{
+        background-color: #d2e3ff;
+    }
+    &.sunset{
+        background-color: #FFBF9B;
+    }
+    &.night{
+        background-color: #657387;
+    }
+}
+
+.ground {
+    &.sunrise{
+        background-color: #9ac1af;
+    }
+    &.noon{
+        background-color: #87baa1;
+    }
+    &.sunset{
+        background-color: #759284;
+    }
+    &.night{
+        background-color: #53685E;
+    }
+}
+
+.clock {
+    position: relative;
+
+    .cycle_path {
+        position: absolute;
+        
+        z-index: 2;
+        top: -13rem;
+        left: -13rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 6px solid white;
+        border-radius: 50%;
+
+        width: 26rem;
+        height: 26rem;
+
+    }
+        .path{
+            position: absolute;
+            z-index: 3;
+            top: -15.25rem;
+            left: -15.25rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 30.5rem;
+            height: 30.5rem;
+
+            transform: rotate(0deg);
+            transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+
+
+    .sun {
+        border-radius: 50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-image: linear-gradient(120deg, #f6d365 0%, #f09f6c 100%);
+    
+        bottom: -2.25rem;
+        left: -15.25rem;
+        z-index: 3;
+        
+    }
+    
+    .moon {
+        border-radius: 50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        
+        bottom: -2.25rem;
+        right: -15.25rem;
+        z-index: 3;
+    }
+    
+    .working_clock {
+        position: absolute;
+        z-index: 4;
+        left: -6.7rem;
+        bottom: -2.1rem;
+
+        display: flex;
+        font-size: 6rem;
+
+        >p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hours {}
+
+        .div {}
+
+        .minutes {}
+    }
+}
+
+// .circles{
+//     transform: rotate(90deg);
+//     transform-origin: 100%;
+//     transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+// }
+
+
+
+.countdown {
+    .countdown_widget {
+        padding: 0.8rem 2rem;
+        border: solid 6px transparent;
+        border-radius: 6px;
+        border-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+        border-image-slice: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+        -webkit-background-clip: text;
+          color: transparent;
+          font-weight: 600;
+          font-size: 1.2rem;
+
+        .message {
+            margin: 0 .4rem 0 0;
+            padding: 0;
+
+        }
+
+        .cd_time {
+
+            display: flex;
+
+            >p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &.cd_noon {
+            display: none;
+        }
+
+        &.cd_sunset {
+            display: none;
+        }
+
+        &.cd_night {
+            display: none;
+        }
+    }
+}
