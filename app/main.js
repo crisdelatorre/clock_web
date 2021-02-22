@@ -91,11 +91,12 @@ let backgroundChange = () => {
  * COUNTDOWN
  */
 let countdown = () => {
+    const cdHourspointer = document.querySelector('.working_clock .hours');
     const showMessage = document.querySelector('.countdown_widget .message');
 
     let currentDate = new Date();
     let countdownDate = new Date();
-    let nowTime = clockHours.innerHTML;
+    let nowTime = cdHourspointer.innerHTML;
     let timeOfDay = "";
 
     let currentHour = currentDate.getTime();
@@ -105,22 +106,31 @@ let countdown = () => {
         countdownHour = countdownDate.setHours(12, 0, 0, 0);
         timeOfDay = "noon";
 
+        console.log("sunrise");
+
     } else if (nowTime >= "12" && nowTime < "19") {
         countdownHour = countdownDate.setHours(19, 0, 0, 0);
         timeOfDay = "sunset";
 
-    } else if ("19" <= nowTime < "21") {
+        console.log("noon");
+
+    } else if (nowTime >= "19" && nowTime < "21") {
         countdownHour = countdownDate.setHours(21, 0, 0, 0);
         timeOfDay = "night";
 
-    } else if ("21" <= nowTime <= "23" && "00" <= nowTime < "08") {
+        console.log("sunset");
+
+    } else {
         countdownHour = countdownDate.setHours(08, 0, 0, 0);
         timeOfDay = "sunrise";
+
+        console.log("night");
+
     }
 
     let operation = countdownHour - currentHour;
 
-    let cdHours = Math.abs(Math.floor(operation / (1000 * 60 * 60)));
+    let cdHours = Math.abs(Math.floor(operation / (1000 * 3600)));
     let cdMins = Math.abs(Math.floor((operation / (1000 * 60) + 1)));
 
     let message = `Time till ${timeOfDay} mode =  ${cdHours}h : ${cdMins}'`;
